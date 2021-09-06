@@ -1,0 +1,35 @@
+using System;
+ 
+class GFG {
+ 
+    public virtual int lengthOfLastWord(string a)
+    {
+        int len = 0;
+ 
+        // String a is 'final'-- can
+        // not be modified So, create
+        // a copy and trim the
+        // spaces from both sides
+        string x = a.Trim();
+ 
+        for (int i = 0; i < x.Length; i++) {
+            if (x[i] == ' ') {
+                len = 0;
+            }
+            else {
+                len++;
+            }
+        }
+ 
+        return len;
+    }
+ 
+    // Driver code
+    public static void Main(string[] args)
+    {
+        string input = "Geeks For Geeks ";
+        GFG gfg = new GFG();
+        Console.WriteLine("The length of last word is "
+                          + gfg.lengthOfLastWord(input));
+    }
+}
